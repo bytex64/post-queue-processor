@@ -1,0 +1,11 @@
+# This uses Rocket for web processing, so set all IP and limits in Rocket.toml
+
+# The directory where files get stored before processing. Set your temp_dir in
+# Rocket.toml to somewhere on the same filesystem as this.
+queue_dir = "queue"
+# Command-line to execute on stored files. %a is replaced with a list of all
+# the files queued.
+exec = "ls -l %a"
+# Optional - seconds to wait after the last upload before processing the queue.
+# Defaults to 5 seconds if not specified.
+debounce = 2
